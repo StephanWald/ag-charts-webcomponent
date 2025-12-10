@@ -1,0 +1,22 @@
+{
+  "name": "ag-charts-web-components",
+  "version": "1.0.0",
+  "description": "Self-contained web components for AG Charts Community",
+  "main": "dist/ag-charts-components.bundle.js",
+  "scripts": {
+    "build": "node build.js",
+    "serve": "python3 -m http.server 8000",
+    "dev": "npm run build && npm run serve"
+  },
+  "devDependencies": {
+    "ag-charts-community": "^10.3.1"
+  },
+  "keywords": [
+    "charts",
+    "web-components",
+    "ag-charts",
+    "data-visualization"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}

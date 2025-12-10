@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AG Charts Gallery - All Free Components</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .chart-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s ease;
+        }
+
+        .chart-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .chart-header {
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .chart-header h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #495057;
+        }
+
+        .chart-header p {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .chart-container {
+            padding: 1rem;
+            height: 350px;
+        }
+
+        .code-example {
+            padding: 1rem 1.5rem;
+            background: #f1f3f4;
+            border-top: 1px solid #e9ecef;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 0.85rem;
+            overflow-x: auto;
+        }
+
+        .code-example h4 {
+            margin: 0 0 0.5rem 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #495057;
+            font-size: 0.9rem;
+        }
+
+        .code-example pre {
+            margin: 0;
+            color: #495057;
+            white-space: pre-wrap;
+            line-height: 1.4;
+        }
+
+        .controls {
+            padding: 1rem 1.5rem;
+            background: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .controls button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .controls button:hover {
+            background: #5a6fd8;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: #495057;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: #6c757d;
+        }
+
+        .build-info {
+            background: #e3f2fd;
+            border: 1px solid #1976d2;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .build-info h3 {
+            color: #1976d2;
+            margin-bottom: 1rem;
+        }
+
+        .build-info code {
+            background: #fff;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Consolas', monospace;
+        }
+
+        @media (max-width: 768px) {
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Include the components -->
+    <script src="ag-charts-components.js"></script>
+
+    <div class="header">
+        <h1>AG Charts Gallery - Complete Collection</h1>
+        <p>All free AG Charts Community web components in one place</p>
+    </div>
+
+    <div class="container">
+        <div class="build-info">
+            <h3>🚀 Features</h3>
+            <p><strong>Auto-healing JSON Strings:</strong> Data can be passed as objects or JSON strings - components automatically detect and parse string data.</p>
+            <p style="margin-top: 0.5rem;"><strong>Build Process:</strong> Run <code>npm install</code> then <code>npm run build</code> to create self-contained bundles:</p>
+            <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                <li><strong>ag-charts-components.bundle.js</strong> - Full bundle with AG Charts library</li>
+                <li><strong>ag-charts-components.bundle.min.js</strong> - Minified version</li>
+                <li><strong>ag-charts-components.standalone.js</strong> - Components only (for external library loading)</li>
+            </ul>
+        </div>
+
+        <div class="section-title">
+            <h2>Available Chart Types</h2>
+            <p>All AG Charts Community (free) chart types as reusable web components</p>
+        </div>
+
+        <div class="charts-grid">
+            <!-- Donut Chart -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3>Donut Chart</h3>
+                    <p>Perfect for showing proportional data with a modern donut style</p>
+                </div>
+                <div class="chart-container">
+                    <ag-donut-chart id="donutChart" title="Sales by Category"></ag-donut-chart>
+                </div>
+                <div class="code-example">
+                    <h4>Usage Example:</h4>
+                    <pre>&lt;ag-donut-chart id="chart" title="Sales by Category"&gt;&lt;/ag-donut-chart&gt;
+
+&lt;script&gt;
+const chart = document.getElementById('chart');
+
+// Option 1: Object array (standard)
+chart.data = [
+  { label: 'Electronics', value: 45 },
+  { label: 'Clothing', value: 30 },
+  { label: 'Books', value: 15 },
+  { label: 'Home & Garden', value: 10 }
+];
+
+// Option 2: JSON string (auto-parsed)
+chart.data = '[{"label":"Electronics","value":45}]';
+&lt;/script&gt;</pre>
+                </div>
+                <div class="controls">
+                    <button onclick="refreshChart('donutChart', getSalesData)">Refresh</button>
+                    <button onclick="testJsonString('donutChart')">Test JSON String</button>
+                    <button onclick="exportChart('donutChart', 'png')">PNG</button>
+                    <button onclick="exportChart('donutChart', 'svg')">SVG</button>
+                </div>
+            </div>
+
+            <!-- Pie Chart -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3>Pie Chart</h3>
+                    <p>Classic pie chart for simple proportional data visualization</p>
+                </div>
+                <div class="chart-container">
+                    <ag-pie-chart id="pieChart" title="Market Share"></ag-pie-chart>
+                </div>
+                <div class="code-example">
+                    <h4>Usage Example:</h4>
+                    <pre>&lt;ag-pie-chart id="chart" title="Market Share"&gt;&lt;/ag-pie-chart&gt;
+
+&lt;script&gt;
+const chart = document.getElementById('chart');
+chart.data = [
+  { label: 'Company A', value: 40 },
+  { label: 'Company B', value: 30 },
+  { label: 'Company C', value: 20 },
+  { label: 'Others', value: 10 }
+];
+&lt;/script&gt;</pre>
+                </div>
+                <div class="controls">
+                    <button onclick="refreshChart('pieChart', getMarketData)">Refresh</button>
+                    <button onclick="exportChart('pieChart', 'png')">PNG</button>
+                    <button onclick="exportChart('pieChart', 'svg')">SVG</button>
+                </div>
+            </div>
+
+            <!-- Line Chart -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3>Line Chart</h3>
+                    <p>Time series and trend visualization with smooth lines</p>
+                </div>
+                <div class="chart-container">
+                    <ag-line-chart id="lineChart" title="Revenue Trend"></ag-line-chart>
+                </div>
+                <div class="code-example">
+                    <h4>Usage Example:</h4>
+                    <pre>&lt;ag-line-chart id="chart" title="Revenue Trend"&gt;&lt;/ag-line-chart&gt;
+
+&lt;script&gt;
+const chart = document.getElementById('chart');
+chart.data = [
+  { x: new Date('2024-01-01'), y: 1000 },
+  { x: new Date('2024-02-01'), y: 1200 },
+  { x: new Date('2024-03-01'), y: 1100 },
+  { x: new Date('2024-04-01'), y: 1300 }
+];
+&lt;/script&gt;</pre>
+                </div>
+                <div class="controls">
+                    <button onclick="refreshChart('lineChart', getTimeSeriesData)">Refresh</button>
+                    <button onclick="exportChart('lineChart', 'png')">PNG</button>
+                    <button onclick="exportChart('lineChart', 'svg')">SVG</button>
+                </div>
+            </div>
+
+            <!-- Bar Chart -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3>Bar Chart</h3>
+                    <p>Horizontal bars perfect for comparing categories</p>
+                </div>
+                <div class="chart-container">
+                    <ag-bar-chart id="barChart" title="Performance by Team"></ag-bar-chart>
+                </div>
+                <div class="code-example">
+                    <h4>Usage Example:</h4>
+                    <pre>&lt;ag-bar-chart id="chart" title="Performance by Team"&gt;&lt;/ag-bar-chart&gt;
+
+&lt;script&gt;
+const chart = document.getElementById('chart');
+chart.data = [
+  { category: 'Team Alpha', value: 85 },
+  { category: 'Team Beta', value: 92 },
+  { category: 'Team Gamma', value: 78 },
+  { category: 'Team Delta', value: 88 }
+];
+&lt;/script&gt;</pre>
+                </div>
+                <div class="controls">
+                    <button onclick="refreshChart('barChart', getBarData)">Refresh</button>
+                    <button onclick="exportChart('barChart', 'png')">PNG</button>
+                    <button onclick="exportChart('barChart', 'svg')">SVG</button>
+                </div>
+            </div>
+
+            <!-- Column Chart -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3>Column Chart</h3>
+                    <p>Vertical columns for clear category comparisons</p>
+                </div>
+                <div class="chart-container">
+                    <ag-column-chart id="columnChart" title="Monthly Sales"></ag-column-chart>
+                </div>
+                <div class="code-example">
+                    <h4>Usage Example:</h4>
+                    <pre>&lt;ag-column-chart id="chart" title="Monthly Sales"&gt;&lt;/ag-column-chart&gt;
+
+&lt;script&gt;
+const chart = document.getElementById('chart');
+chart.data = [
+  { category: 'Jan', value: 850 },
+  { category: 'Feb', value: 920 },
+  { category: 'Mar', value: 780 },
+  { category: 'Apr', value: 1050 },
+  { category: 'May', value: 1200 },
+  { category: 'Jun', value: 990 }
+];
+&lt;/script&gt;</pre>
+                </div>
+                <div class="controls">
+                    <button onclick="refreshChart('columnChart', getColumnData)">Refresh</button>
+                    <button onclick="exportChart('columnChart', 'png')">PNG</button>
+                    <button onclick="exportChart('columnChart', 'svg')">SVG</button>
+                </div>
+            </div>
+
+            <!-- Area Chart -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3>Area Chart</h3>
+                    <p>Filled area charts showing cumulative data over time</p>
+                </div>
+                <div class="chart-container">
+                    <ag-area-chart id="areaChart" title="User Growth"></ag-area-chart>
+                </div>
+                <div class="code-example">
+                    <h4>Usage Example:</h4>
+                    <pre>&lt;ag-area-chart id="chart" title="User Growth"&gt;&lt;/ag-area-chart&gt;
+
+&lt;script&gt;
+const chart = document.getElementById('chart');
+chart.data = [
+  { x: 0, y: 100 },
+  { x: 1, y: 200 },
+  { x: 2, y: 300 },
+  { x: 3, y: 450 },
+  { x: 4, y: 600 }
+];
+&lt;/script&gt;</pre>
+                </div>
+                <div class="controls">
+                    <button onclick="refreshChart('areaChart', getAreaData)">Refresh</button>
+                    <button onclick="exportChart('areaChart', 'png')">PNG</button>
+                    <button onclick="exportChart('areaChart', 'svg')">SVG</button>
+                </div>
+            </div>
+
+            <!-- Scatter Chart -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3>Scatter Chart</h3>
+                    <p>XY plots for correlation analysis and data point distribution</p>
+                </div>
+                <div class="chart-container">
+                    <ag-scatter-chart id="scatterChart" title="Price vs Performance"></ag-scatter-chart>
+                </div>
+                <div class="code-example">
+                    <h4>Usage Example:</h4>
+                    <pre>&lt;ag-scatter-chart id="chart" title="Price vs Performance"&gt;&lt;/ag-scatter-chart&gt;
+
+&lt;script&gt;
+const chart = document.getElementById('chart');
+chart.data = [
+  { x: 50, y: 80 },
+  { x: 75, y: 65 },
+  { x: 90, y: 95 },
+  { x: 60, y: 70 },
+  { x: 85, y: 90 }
+];
+&lt;/script&gt;</pre>
+                </div>
+                <div class="controls">
+                    <button onclick="refreshChart('scatterChart', getScatterData)">Refresh</button>
+                    <button onclick="exportChart('scatterChart', 'png')">PNG</button>
+                    <button onclick="exportChart('scatterChart', 'svg')">SVG</button>
+                </div>
+            </div>
+
+            <!-- Bubble Chart -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3>Bubble Chart</h3>
+                    <p>Three-dimensional data with X, Y position and bubble size</p>
+                </div>
+                <div class="chart-container">
+                    <ag-bubble-chart id="bubbleChart" title="Market Analysis"></ag-bubble-chart>
+                </div>
+                <div class="code-example">
+                    <h4>Usage Example:</h4>
+                    <pre>&lt;ag-bubble-chart id="chart" title="Market Analysis"&gt;&lt;/ag-bubble-chart&gt;
+
+&lt;script&gt;
+const chart = document.getElementById('chart');
+chart.data = [
+  { x: 40, y: 60, size: 25 },
+  { x: 70, y: 80, size: 15 },
+  { x: 55, y: 45, size: 35 },
+  { x: 85, y: 70, size: 20 },
+  { x: 30, y: 90, size: 30 }
+];
+&lt;/script&gt;</pre>
+                </div>
+                <div class="controls">
+                    <button onclick="refreshChart('bubbleChart', getBubbleData)">Refresh</button>
+                    <button onclick="exportChart('bubbleChart', 'png')">PNG</button>
+                    <button onclick="exportChart('bubbleChart', 'svg')">SVG</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample data generators
+        function getSalesData() {
+            return [
+                { label: 'Electronics', value: Math.floor(Math.random() * 50) + 20 },
+                { label: 'Clothing', value: Math.floor(Math.random() * 50) + 20 },
+                { label: 'Books', value: Math.floor(Math.random() * 30) + 10 },
+                { label: 'Home & Garden', value: Math.floor(Math.random() * 20) + 5 }
+            ];
+        }
+
+        function getMarketData() {
+            return [
+                { label: 'Company A', value: Math.floor(Math.random() * 40) + 25 },
+                { label: 'Company B', value: Math.floor(Math.random() * 35) + 20 },
+                { label: 'Company C', value: Math.floor(Math.random() * 30) + 15 },
+                { label: 'Others', value: Math.floor(Math.random() * 25) + 10 }
+            ];
+        }
+
+        function getTimeSeriesData() {
+            const data = [];
+            for (let i = 0; i < 12; i++) {
+                data.push({
+                    x: new Date(2024, i, 1),
+                    y: Math.floor(Math.random() * 5000) + 2000 + (i * 100)
+                });
+            }
+            return data;
+        }
+
+        function getBarData() {
+            return [
+                { category: 'Team Alpha', value: Math.floor(Math.random() * 100) + 50 },
+                { category: 'Team Beta', value: Math.floor(Math.random() * 100) + 50 },
+                { category: 'Team Gamma', value: Math.floor(Math.random() * 100) + 50 },
+                { category: 'Team Delta', value: Math.floor(Math.random() * 100) + 50 }
+            ];
+        }
+
+        function getColumnData() {
+            return [
+                { category: 'Jan', value: Math.floor(Math.random() * 1000) + 500 },
+                { category: 'Feb', value: Math.floor(Math.random() * 1000) + 500 },
+                { category: 'Mar', value: Math.floor(Math.random() * 1000) + 500 },
+                { category: 'Apr', value: Math.floor(Math.random() * 1000) + 500 },
+                { category: 'May', value: Math.floor(Math.random() * 1000) + 500 },
+                { category: 'Jun', value: Math.floor(Math.random() * 1000) + 500 }
+            ];
+        }
+
+        function getAreaData() {
+            const data = [];
+            for (let i = 0; i < 10; i++) {
+                data.push({
+                    x: i,
+                    y: Math.floor(Math.random() * 1000) + (i * 100)
+                });
+            }
+            return data;
+        }
+
+        function getScatterData() {
+            const data = [];
+            for (let i = 0; i < 20; i++) {
+                data.push({
+                    x: Math.floor(Math.random() * 100),
+                    y: Math.floor(Math.random() * 100)
+                });
+            }
+            return data;
+        }
+
+        function getBubbleData() {
+            const data = [];
+            for (let i = 0; i < 15; i++) {
+                data.push({
+                    x: Math.floor(Math.random() * 100),
+                    y: Math.floor(Math.random() * 100),
+                    size: Math.floor(Math.random() * 50) + 10
+                });
+            }
+            return data;
+        }
+
+        // Initialize all charts
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize each chart with sample data
+            setTimeout(() => {
+                document.getElementById('donutChart').data = getSalesData();
+                document.getElementById('pieChart').data = getMarketData();
+                document.getElementById('lineChart').data = getTimeSeriesData();
+                document.getElementById('barChart').data = getBarData();
+                document.getElementById('columnChart').data = getColumnData();
+                document.getElementById('areaChart').data = getAreaData();
+                document.getElementById('scatterChart').data = getScatterData();
+                document.getElementById('bubbleChart').data = getBubbleData();
+            }, 500);
+        });
+
+        // Utility functions
+        function refreshChart(chartId, dataGenerator) {
+            const chart = document.getElementById(chartId);
+            chart.data = dataGenerator();
+        }
+
+        function exportChart(chartId, format) {
+            const chart = document.getElementById(chartId);
+            if (format === 'png') {
+                chart.exportToPNG(`${chartId}.png`);
+            } else {
+                chart.exportToSVG(`${chartId}.svg`);
+            }
+        }
+
+        function testJsonString(chartId) {
+            const chart = document.getElementById(chartId);
+            // Test setting data as a JSON string (auto-healing feature)
+            const jsonString = '[{"label":"JSON Test","value":40},{"label":"String Data","value":35},{"label":"Auto-parsed","value":25}]';
+            console.log('Testing JSON string data:', jsonString);
+            chart.data = jsonString; // This should be auto-parsed
+        }
+
+        // Event listeners
+        document.addEventListener('chart-created', function(e) {
+            console.log('Chart created successfully');
+        });
+
+        document.addEventListener('chart-error', function(e) {
+            console.error('Chart error:', e.detail.error);
+        });
+    </script>
+</body>
+</html>

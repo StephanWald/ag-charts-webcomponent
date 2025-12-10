@@ -7,9 +7,11 @@ Self-contained HTML5 web components for all AG Charts Community (free) chart typ
 - ✅ **8 Chart Types**: All free AG Charts Community charts
 - ✅ **Self-contained**: No external dependencies when bundled
 - ✅ **Web Components**: Standard HTML5 custom elements
+- ✅ **Auto-healing Data**: Accepts objects or JSON strings (auto-parsed)
 - ✅ **Event System**: Chart lifecycle events
 - ✅ **Export Functions**: PNG and SVG export
 - ✅ **Configurable**: Full AG Charts API access
+- ✅ **GWT Compatible**: Works in GWT and regular browser environments
 - ✅ **On-premise Ready**: Configurable library URL
 
 ## Available Chart Types
@@ -112,12 +114,15 @@ npm run dev
 <script>
 const chart = document.getElementById('trend');
 
-// Set data
+// Option 1: Set data as object array
 chart.data = [
     { x: new Date('2024-01'), y: 1000 },
     { x: new Date('2024-02'), y: 1200 },
     { x: new Date('2024-03'), y: 1100 }
 ];
+
+// Option 2: Set data as JSON string (auto-parsed)
+chart.data = '[{"x":"2024-01-01","y":1000},{"x":"2024-02-01","y":1200}]';
 
 // Configure chart
 chart.config = {
